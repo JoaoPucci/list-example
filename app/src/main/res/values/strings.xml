@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">List Example</string>
+    <string name="cd_spotlight">spotlight banner</string>
+    <string name="cd_cash">cash banner</string>
 </resources>
