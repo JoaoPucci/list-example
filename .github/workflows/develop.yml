@@ -3,7 +3,7 @@ name: Develop CI
 on:
   pull_request:
     branches:
-      - develop
+      - main
     
 jobs:
   unit-tests:
