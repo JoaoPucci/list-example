@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listexample.R
 import com.example.listexample.databinding.FragmentProductsBinding
+import com.example.listexample.presenter.adapter.ProductAdapter
 import com.example.listexample.presenter.adapter.SpotlightAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,8 +28,8 @@ class ProductsFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        observeSpotlights(binding.rvSpotlights)
-        observeProducts()
+        observeSpotlights(binding.vSpotlights.rvSpotlights)
+        observeProducts(binding.vProducts.rvProducts)
 
         return binding.root
     }
@@ -39,8 +40,9 @@ class ProductsFragment : Fragment() {
         })
     }
 
-    private fun observeProducts() {
+    private fun observeProducts(rvProducts: RecyclerView) {
         viewModel.products.observe(viewLifecycleOwner, Observer {
+            rvProducts.adapter = ProductAdapter(it)
         })
     }
 }

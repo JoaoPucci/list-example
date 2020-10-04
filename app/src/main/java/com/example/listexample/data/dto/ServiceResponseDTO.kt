@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 
 class ServiceResponseDTO(
     @field:Json(name = "spotlight") private val spotlights: List<SpotlightDTO>?,
-    @field:Json(name = "products") private val products: List<SpotlightDTO>?,
+    @field:Json(name = "products") private val products: List<ProductDTO>?,
     @field:Json(name = "cash") private val cash: CashDTO?
 ) {
     fun transform() = ServiceResponse(
