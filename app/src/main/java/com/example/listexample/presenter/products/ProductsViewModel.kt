@@ -22,17 +22,25 @@ class ProductsViewModel(private val repository: ProductRepository) : ViewModel()
     val cash: LiveData<Product>
         get() = _cash
 
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean>
+        get() = _loading
+
     init {
         getProducts()
     }
 
     private fun getProducts () {
         viewModelScope.launch {
+            _loading.value = true
+
             with(repository.getAll()) {
                 _spotlights.value = this.spotlights
                 _products.value = this.products
                 _cash.value = this.cash
             }
+
+            _loading.value = false
         }
     }
 
