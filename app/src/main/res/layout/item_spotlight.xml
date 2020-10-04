@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="product"
+            type="com.example.listexample.model.Product" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp">
+
+        <ImageView
+            android:id="@+id/spotlight"
+            android:layout_width="320dp"
+            android:layout_height="180dp"
+            imageUrl="@{product.imageUrl}"
+            android:contentDescription="@string/cd_spotlight"
+            android:scaleType="fitXY"
+            tools:src="@drawable/placeholder_item_spotlight" />
+    </androidx.cardview.widget.CardView>
+</layout>
