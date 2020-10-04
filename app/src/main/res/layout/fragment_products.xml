@@ -20,8 +20,9 @@
             android:padding="8dp"
             tools:context=".presenter.products.ProductsFragment">
 
-            <include layout="@layout/layout_spotlights"
+            <include
                 android:id="@+id/v_spotlights"
+                layout="@layout/layout_spotlights"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,13 +51,13 @@
 
 
             <ProgressBar
+                isVisible="@{viewModel.loading}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                isVisible="@{viewModel.loading}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

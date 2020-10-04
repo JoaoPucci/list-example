@@ -31,6 +31,8 @@ class ProductsFragment : Fragment() {
         observeSpotlights(binding.vSpotlights.rvSpotlights)
         observeProducts(binding.vProducts.rvProducts)
 
+        viewModel.getProducts()
+
         return binding.root
     }
 

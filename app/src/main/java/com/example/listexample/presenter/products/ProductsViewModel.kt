@@ -26,11 +26,7 @@ class ProductsViewModel(private val repository: ProductRepository) : ViewModel()
     val loading: LiveData<Boolean>
         get() = _loading
 
-    init {
-        getProducts()
-    }
-
-    private fun getProducts () {
+    fun getProducts () {
         viewModelScope.launch {
             _loading.value = true
 
