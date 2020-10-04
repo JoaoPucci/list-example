@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cd_spotlight">banner do destaque</string>
+    <string name="cd_cash">banner do cash</string>
+    <string name="products_title">Produtos</string>
+</resources>
